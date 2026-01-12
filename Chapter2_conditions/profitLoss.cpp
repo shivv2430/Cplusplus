@@ -21,8 +21,8 @@ int main (){
     int l=2 , b=3;
     int AOR=l*b;
     int POR=2*(l+b);
-    cout<<"Length:"<< l<< " Breadth:"<<b<<AOR<<endl;
-    cout<<"Length:"<< l<< " Breadth:"<<b<<POR<<endl;
+    cout<<"Length:"<< l<< " Breadth:"<<b<<" "<<AOR<<endl;
+    cout<<"Length:"<< l<< " Breadth:"<<b<<" "<<POR<<endl;
     if(AOR>=POR){
         cout<< "AOR is greater than POR"<< " by " <<AOR-POR<<endl;
     }
