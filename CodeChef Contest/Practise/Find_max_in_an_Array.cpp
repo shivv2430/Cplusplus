@@ -14,8 +14,11 @@ int main (){
 
     int maximum=A[0];
 
-    if(A[N] > A[0]){
-        int maximum = A[N];
+    for (int i=0;i<N;i++){
+        if (A[i]>maximum){
+            maximum=A[i];
+        }
     }
-    cout << "maximum number is : "<< maximum <<endl;
+        cout<<maximum<<endl;
+    
 }
