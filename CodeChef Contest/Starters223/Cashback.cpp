@@ -7,7 +7,7 @@ int main() {
 	int cash;
     cout<<"Enter your cost price : ";
 	cin>>cash;
-	if(cash >200){
+	if(cash >=200){
 	    cout<<cash-50;
 	}
 	else 
