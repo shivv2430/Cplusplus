@@ -29,5 +29,6 @@ int main (){
     }
 
     if(found == 0){
-        cout<<"Element not found"; 
+        cout<<"Element not found"<<endl; 
+}
 }
