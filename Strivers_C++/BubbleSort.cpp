@@ -3,38 +3,33 @@ using namespace std;
 
 int main() {
     int n;
+
+    // Take size from user
+    cout << "Enter number of elements: ";
     cin >> n;
 
-    int *A = new int[n];
+    int arr[n];
 
-    for(int i = 0; i < n; i++){
-        cin >> A[i];
+    // Take elements from user
+    cout << "Enter " << n << " elements:\n";
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
 
-    // Selection Sort
-    for(int x = 0; x <= n-2; x++){
-        int min = A[x];
-        int loc = x;
-
-        for(int y = x+1; y <= n-1; y++){
-            if(A[y] < min){
-                min = A[y];
-                loc = y;
+    // Bubble Sort
+    for(int i = 0; i < n-1; i++) {
+        for(int j = 0; j < n-i-1; j++) {
+            if(arr[j] > arr[j+1]) {
+                swap(arr[j], arr[j+1]);
             }
         }
-
-        // swap (correct place)
-        int temp = A[x];
-        A[x] = A[loc];
-        A[loc] = temp;
     }
 
-    // print once
-    for(int i = 0; i < n; i++){
-        cout << A[i] << " ";
+    // Print sorted array
+    cout << "Sorted array: ";
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
     }
-
-    delete[] A;
 
     return 0;
 }
