@@ -54,11 +54,34 @@ void traverse(node *temp) {
   }
 }
 
+// insert-at-beginning
+void insert_beg(node *&start, int value) {
+  node *nptr = create_node(value);
+  nptr->link = start;
+  start = nptr;
+}
+
+// insert-end
+void insert_end(node *&start, int value) {
+  node *nptr = create_node(value);
+  node *ptr = start;
+  while (ptr->link != NULL) {
+    ptr = ptr->link;
+  }
+  ptr->link = nptr;
+}
+
 // Main function
 int main() {
   node *start;
   start = create_sll();
 
+  traverse(start);
+
+  insert_beg(start, 10);
+  traverse(start);
+
+  insert_end(start, 20);
   traverse(start);
 
   return 0;
