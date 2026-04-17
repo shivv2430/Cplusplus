@@ -71,6 +71,32 @@ void insert_end(node *&start, int value) {
   ptr->link = nptr;
 }
 
+// delete-beg
+void delete_beg(node *&start) {
+  node *ptr = start;
+  start = start->link;
+  delete ptr;
+}
+
+// delete-end
+void delete_end(node *&start) {
+  node *ptr = start;
+  node *nptr = start;
+  while (ptr->link != NULL) {
+    ptr = ptr->link;
+  }
+  ptr->link = nptr;
+}
+// delete-nth
+void delete_nth(node *&start, int n) {
+  node *ptr = start;
+  node *nptr = start;
+  while (ptr->link != NULL) {
+    ptr = ptr->link;
+  }
+  ptr->link = nptr;
+}
+
 // Main function
 int main() {
   node *start;
@@ -82,6 +108,15 @@ int main() {
   traverse(start);
 
   insert_end(start, 20);
+  traverse(start);
+
+  delete_beg(start);
+  traverse(start);
+
+  delete_end(start);
+  traverse(start);
+
+  delete_nth(start, 2);
   traverse(start);
 
   return 0;
