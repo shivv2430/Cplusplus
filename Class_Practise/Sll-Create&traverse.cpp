@@ -70,6 +70,16 @@ void insert_end(node *&start, int value) {
   }
   ptr->link = nptr;
 }
+// insert-nth
+void insert_nth(node *&start, int value, int n) {
+  node *nptr = create_node(value);
+  node *ptr = start;
+  for (int i = 0; i < n - 1; i++) {
+    ptr = ptr->link;
+  }
+  nptr->link = ptr->link;
+  ptr->link = nptr;
+}
 
 // delete-beg
 void delete_beg(node *&start) {
@@ -122,6 +132,9 @@ int main() {
   traverse(start);
 
   insert_end(start, 20);
+  traverse(start);
+
+  insert_nth(start, 30, 3);
   traverse(start);
 
   delete_beg(start);
