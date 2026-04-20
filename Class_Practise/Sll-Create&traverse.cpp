@@ -98,6 +98,19 @@ void delete_nth(node *&start, int n) {
   ptr->link = nptr;
 }
 
+void reverse(node *&start) {
+  node *prev = NULL;
+  node *curr = start;
+  node *next = NULL;
+  while (curr != NULL) {
+    next = curr->link;
+    curr->link = prev;
+    prev = curr;
+    curr = next;
+  }
+  start = prev;
+}
+
 // Main function
 int main() {
   node *start;
@@ -120,5 +133,7 @@ int main() {
   delete_nth(start, 2);
   traverse(start);
 
+  reverse(start);
+  traverse(start);
   return 0;
 }
