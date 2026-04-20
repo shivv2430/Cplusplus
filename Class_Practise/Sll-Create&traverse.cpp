@@ -89,6 +89,7 @@ void delete_end(node *&start) {
 }
 // delete-nth
 void delete_nth(node *&start, int n) {
+  int loc, k;
   node *ptr = start;
   node *nptr = start;
   while (ptr->link != NULL) {
