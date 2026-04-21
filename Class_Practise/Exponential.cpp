@@ -52,3 +52,13 @@ int main() {
   start = Create_poly();
   traverse(start);
 }
+
+// input:
+//  3 4 1
+//  2 3 1
+//  5 2 1
+//  6 1 1
+//  7 0 0
+
+// output:
+// 3X^4 + 2X^3 + 5X^2 + 6X^1 + 7X^0
