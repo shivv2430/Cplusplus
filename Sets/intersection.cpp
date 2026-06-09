@@ -10,9 +10,9 @@ int main() {
   s1.insert(4);
 
   set<int> s2;
-  s2.insert(1);
-  s2.insert(2);
   s2.insert(3);
+  s2.insert(2);
+  s2.insert(7);
   s2.insert(4);
 
   set<int> result;
