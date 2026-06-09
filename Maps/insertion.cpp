@@ -13,5 +13,33 @@ int main() {
     cout << it->first << " " << it->second << endl;
   }
 
+  // deletion
+  m.erase(1);
+
+  // size
+  cout << m.size();
+
+  // find
+  if (m.find(2) != m.end()) {
+    cout << "key is present";
+  } else {
+    cout << "key is not present";
+  }
+
+  // lower bound
+  cout << m.lower_bound(2)->first;
+
+  // upper bound
+  cout << m.upper_bound(2)->first;
+
+  // count
+  cout << m.count(2);
+
+  // empty
+  cout << m.empty();
+
+  // clear
+  m.clear();
+
   return 0;
 }
