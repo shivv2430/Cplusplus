@@ -10,7 +10,10 @@ int main() {
     int M, N;
     cin >> M >> N;
 
-    cout << max(0, M - N) << endl;
+    if (N <= M)
+      cout << M - N << '\n';
+    else
+      cout << (N - M) % 2 << '\n';
   }
 
   return 0;
