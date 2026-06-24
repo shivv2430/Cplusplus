@@ -15,7 +15,7 @@ return 0;
 #include <iostream>
 #include<string>
 using namespace std;
-int main()
+int main2()
 {
 string str = "Hi! Welcome Home, Joy. Hi";
 cout<<str.find("Jo")<<endl; cout<<str.find("Jo",19)<<endl;
