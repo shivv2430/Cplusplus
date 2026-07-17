@@ -18,32 +18,40 @@ public:
     if (top == Size - 1) {
       cout << "Stack Overflow" << endl;
       return;
+    } else {
+      top++;
+      arr[top] = x;
     }
-    top++;
-    arr[top] = x;
   }
   // Pop Operation (Deleting element)
   void pop() {
     if (top == -1) {
       cout << "Stack Underflow" << endl;
       return;
+    } else {
+      top--;
     }
-    top--;
   }
   // Display Operation (Printing element)
   void display() {
-    for (int i = top; i >= 0; i--) {
-      cout << arr[i] << " ";
+    if (top == -1) {
+      cout << "Stack is Empty" << endl;
+      return;
+    } else {
+      for (int i = top; i >= 0; i--) {
+        cout << arr[i] << " ";
+      }
+      cout << endl;
     }
-    cout << endl;
   }
   // Peek Operation (Checking top element)
   int peek() {
     if (top == -1) {
       cout << "Stack Underflow" << endl;
       return -1;
+    } else {
+      return arr[top];
     }
-    return arr[top];
   }
 };
 
