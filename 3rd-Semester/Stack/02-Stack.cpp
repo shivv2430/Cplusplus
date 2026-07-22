@@ -1,3 +1,4 @@
+// Stack Implementation Using Static Array
 #include <iostream>
 using namespace std;
 // Constructor
