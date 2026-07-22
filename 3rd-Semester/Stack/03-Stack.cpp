@@ -1,4 +1,4 @@
-// By using vector
+// Stack Implementation Using Vector
 #include <iostream>
 #include <vector>
 using namespace std;
