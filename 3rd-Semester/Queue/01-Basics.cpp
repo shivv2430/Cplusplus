@@ -47,6 +47,19 @@ void dequeue() {
   if (front > rear) {
     front = rear = -1;
   }
+  // Display Queue
+  void display() {
+    if (isEmpty()) {
+      cout << "Queue is Empty" << endl;
+      return;
+    }
+
+    cout << "Queue: ";
+    for (int i = front; i <= rear; i++) {
+      cout << arr[i] << " ";
+    }
+    cout << endl;
+  }
 }
 
 int main() {
@@ -56,12 +69,13 @@ int main() {
   q.enqueue(3);
   q.enqueue(4);
   q.enqueue(5);
-
+  q.display();
   q.dequeue();
   q.dequeue();
   q.dequeue();
   q.dequeue();
   q.dequeue();
+  q.display();
 
   return 0;
 }
