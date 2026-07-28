@@ -30,23 +30,23 @@ public:
     rear++;
     arr[rear] = x;
   }
-};
+  // Dequeue (Delete)
+  void dequeue() {
+    // Underflow condition
+    if (front == -1 || front > rear) {
+      cout << "Queue Underflow" << endl;
+      return;
+    }
 
-// Dequeue (Delete)
-void dequeue() {
-  // Underflow condition
-  if (front == -1 || front > rear) {
-    cout << "Queue Underflow" << endl;
-    return;
+    cout << "Deleted: " << arr[front] << endl;
+    front++;
+
+    // Reset queue when it becomes empty
+    if (front > rear) {
+      front = rear = -1;
+    }
   }
 
-  cout << "Deleted: " << arr[front] << endl;
-  front++;
-
-  // Reset queue when it becomes empty
-  if (front > rear) {
-    front = rear = -1;
-  }
   // Display Queue
   void display() {
     if (isEmpty()) {
@@ -60,7 +60,20 @@ void dequeue() {
     }
     cout << endl;
   }
-}
+
+  // Get Front Element
+  void peek() {
+    if (front == -1 || front > rear) {
+      cout << "Queue is Empty" << endl;
+      return;
+    }
+
+    cout << "Front Element: " << arr[front] << endl;
+  }
+
+  // Check if queue is empty
+  bool isEmpty() { return (front == -1 || front > rear); }
+};
 
 int main() {
   Queue q;
