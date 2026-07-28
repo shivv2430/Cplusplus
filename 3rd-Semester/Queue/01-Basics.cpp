@@ -1,9 +1,6 @@
 #include <iostream>
 using namespace std;
 
-#include <iostream>
-using namespace std;
-
 class Queue {
   int *arr;
   int size;
@@ -35,6 +32,23 @@ public:
   }
 };
 
+// Dequeue (Delete)
+void dequeue() {
+  // Underflow condition
+  if (front == -1 || front > rear) {
+    cout << "Queue Underflow" << endl;
+    return;
+  }
+
+  cout << "Deleted: " << arr[front] << endl;
+  front++;
+
+  // Reset queue when it becomes empty
+  if (front > rear) {
+    front = rear = -1;
+  }
+}
+
 int main() {
   Queue q;
   q.enqueue(1);
@@ -42,6 +56,12 @@ int main() {
   q.enqueue(3);
   q.enqueue(4);
   q.enqueue(5);
+
+  q.dequeue();
+  q.dequeue();
+  q.dequeue();
+  q.dequeue();
+  q.dequeue();
 
   return 0;
 }
