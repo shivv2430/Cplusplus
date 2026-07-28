@@ -73,6 +73,9 @@ public:
 
   // Check if queue is empty
   bool isEmpty() { return (front == -1 || front > rear); }
+
+  // Destructor(optional)
+  ~Queue() { delete[] arr; }
 };
 
 int main() {
