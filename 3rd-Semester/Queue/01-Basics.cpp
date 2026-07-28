@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+#include <iostream>
+using namespace std;
+
+class Queue {
+  int *arr;
+  int size;
+  int front;
+  int rear;
+
+public:
+  Queue() {
+    size = 100;
+    arr = new int[size];
+    front = rear = -1;
+  }
+
+  // Enqueue (Insert)
+  void enqueue(int x) {
+    // Overflow condition
+    if (rear == size - 1) {
+      cout << "Queue Overflow" << endl;
+      return;
+    }
+
+    // First element
+    if (front == -1) {
+      front = 0;
+    }
+
+    rear++;
+    arr[rear] = x;
+  }
+};
+
+int main() {
+  Queue q;
+  q.enqueue(1);
+  q.enqueue(2);
+  q.enqueue(3);
+  q.enqueue(4);
+  q.enqueue(5);
+
+  return 0;
+}
