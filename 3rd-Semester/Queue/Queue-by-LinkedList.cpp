@@ -5,72 +5,56 @@ class Node {
 public:
   int data;
   Node *next;
-
-  Node(int val) {
-    data = val;
-    next = NULL;
-  }
 };
 
 class Queue {
-
-  Node *front;
-  Node *rear;
+  Node *front, *rear;
 
 public:
-  Queue() { front = rear = NULL; }
+  Queue() {
+    front = NULL;
+    rear = NULL;
+  }
 
-  void enqueue(int x) {
-
-    Node *temp = new Node(x);
+  void enqueue(int value) {
+    Node *newNode = new Node;
+    newNode->data = value;
+    newNode->next = NULL;
 
     if (front == NULL) {
-      front = rear = temp;
-      return;
+      front = rear = newNode;
+    } else {
+      rear->next = newNode;
+      rear = newNode;
     }
-
-    rear->next = temp;
-    rear = temp;
   }
 
   void dequeue() {
-
     if (front == NULL) {
-      cout << "Queue Underflow" << endl;
+      cout << "Queue Underflow\n";
       return;
     }
 
     Node *temp = front;
-
-    cout << "Deleted: " << temp->data << endl;
+    cout << "Deleted Element: " << front->data << endl;
 
     front = front->next;
 
-    if (front == NULL) {
+    if (front == NULL)
       rear = NULL;
-    }
 
     delete temp;
   }
 
-  void peek() {
-
-    if (front == NULL) {
-      cout << "Queue is Empty" << endl;
-      return;
-    }
-
-    cout << "Front Element: " << front->data << endl;
-  }
-
   void display() {
-
     if (front == NULL) {
-      cout << "Queue is Empty" << endl;
+      cout << "Queue is Empty\n";
       return;
     }
 
     Node *temp = front;
+
+    cout << "Queue: ";
 
     while (temp != NULL) {
       cout << temp->data << " ";
@@ -82,7 +66,6 @@ public:
 };
 
 int main() {
-
   Queue q;
 
   q.enqueue(10);
@@ -91,14 +74,12 @@ int main() {
 
   q.display();
 
-  q.peek();
-
   q.dequeue();
 
   q.display();
 
-  q.dequeue();
-  q.dequeue();
+  q.enqueue(40);
+  q.enqueue(50);
 
   q.display();
 
