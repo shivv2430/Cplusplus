@@ -1,0 +1,20 @@
+// Problem-Statement: https://www.codechef.com/START250D/problems/SUBCOST7
+#include <iostream>
+using namespace std;
+
+int main() {
+  int T;
+  cin >> T;
+
+  while (T--) {
+    int N, X, Y;
+    cin >> N >> X >> Y;
+
+    if (N <= 3)
+      cout << N * X << endl;
+    else
+      cout << 3 * X + (N - 3) * Y << endl;
+  }
+
+  return 0;
+}
