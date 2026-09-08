@@ -55,6 +55,46 @@ public:
     }
   }
 
+  // Delete from start
+  void deleteStart() {
+    if (front == NULL) {
+      cout << "Deque is empty!" << endl;
+      return;
+    }
+
+    Node *temp = front;
+
+    // If only one node is present
+    if (front == rear) {
+      front = rear = NULL;
+    } else {
+      front = front->next;
+      front->prev = NULL;
+    }
+
+    delete temp;
+  }
+
+  // Delete from end
+  void deleteEnd() {
+    if (rear == NULL) {
+      cout << "Deque is empty!" << endl;
+      return;
+    }
+
+    Node *temp = rear;
+
+    // If only one node is present
+    if (front == rear) {
+      front = rear = NULL;
+    } else {
+      rear = rear->prev;
+      rear->next = NULL;
+    }
+
+    delete temp;
+  }
+
   // Display deque
   void display() {
     if (front == NULL) {
@@ -82,6 +122,16 @@ int main() {
   dq.insertEnd(40);
 
   cout << "Deque after insertion: ";
+  dq.display();
+
+  dq.deleteStart();
+
+  cout << "After deletion from start: ";
+  dq.display();
+
+  dq.deleteEnd();
+
+  cout << "After deletion from end: ";
   dq.display();
 
   return 0;
