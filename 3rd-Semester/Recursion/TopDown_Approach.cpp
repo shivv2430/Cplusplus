@@ -1,4 +1,4 @@
-//=================== for foactorial of n numbers===================
+//=================== for factorial of n numbers===================
 #include <iostream>
 using namespace std;
 int fact(int n) {
@@ -33,3 +33,24 @@ int sum(int n) {
 //   cout << sum(n) << endl;
 //   return 0;
 // }
+
+// =============power of a number===================
+
+int power(int x, int n) {
+  if (n == 0) {
+    return 1;
+  } else {
+    return x * power(x, n - 1);
+  }
+  // }
+  // int main(){
+  //   int x,n;
+  //   cout << "enter the base : ";
+  //   cin >> x;
+  //   cout << "enter the power : ";
+  //   cin >> n;
+  //   cout << "power of " << x << " raised to " << n << " is : ";
+  //   cout << power(x,n) << endl;
+  //   return 0;
+
+  // }
