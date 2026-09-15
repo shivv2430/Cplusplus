@@ -49,3 +49,31 @@ int sum(int n) {
 
 //   return 0;
 // }
+
+#include <iostream>
+using namespace std;
+
+int power(int base, int exponent) {
+  int result = 1;
+
+  for (int i = 1; i <= exponent; i++) {
+    result = result * base;
+  }
+
+  return result;
+}
+
+// int main() {
+//     int base, exponent;
+
+//     cout << "Enter the base: ";
+//     cin >> base;
+
+//     cout << "Enter the exponent: ";
+//     cin >> exponent;
+
+//     cout << base << " raised to the power " << exponent
+//          << " is: " << power(base, exponent) << endl;
+
+//     return 0;
+// }
