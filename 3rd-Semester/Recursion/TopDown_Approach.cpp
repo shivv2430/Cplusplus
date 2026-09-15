@@ -42,15 +42,15 @@ int power(int x, int n) {
   } else {
     return x * power(x, n - 1);
   }
-  // }
-  // int main(){
-  //   int x,n;
-  //   cout << "enter the base : ";
-  //   cin >> x;
-  //   cout << "enter the power : ";
-  //   cin >> n;
-  //   cout << "power of " << x << " raised to " << n << " is : ";
-  //   cout << power(x,n) << endl;
-  //   return 0;
+}
+// int main(){
+//   int x,n;
+//   cout << "enter the base : ";
+//   cin >> x;
+//   cout << "enter the power : ";
+//   cin >> n;
+//   cout << "power of " << x << " raised to " << n << " is : ";
+//   cout << power(x,n) << endl;
+//   return 0;
 
-  // }
+// }
