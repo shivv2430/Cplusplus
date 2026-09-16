@@ -1,0 +1,20 @@
+// Problem_Statement : https://www.codechef.com/START256C/problems/FIXEDPTS
+#include <iostream>
+using namespace std;
+
+int main() {
+  int T;
+  cin >> T;
+
+  while (T--) {
+    int N, K;
+    cin >> N >> K;
+
+    if (N - K == 1)
+      cout << "No" << endl;
+    else
+      cout << "Yes" << endl;
+  }
+
+  return 0;
+}
