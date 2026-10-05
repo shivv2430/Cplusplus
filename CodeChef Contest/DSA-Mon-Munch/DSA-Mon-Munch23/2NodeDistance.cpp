@@ -1,6 +1,8 @@
 // Problem Statement : https://www.codechef.com/DSAMONDAY023/problems/NODESDIST
 
 #include <iostream>
+#include <queue>
+#include <vector>
 using namespace std;
 
 int main() {
